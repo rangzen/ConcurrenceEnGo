@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	compte("mouton")
+	go compte("mouton")
 	compte("poisson")
 }
 
