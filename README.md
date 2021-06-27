@@ -23,3 +23,13 @@ Au lancement du programme, vous allez voir... rien. Les goroutines ne sont pas b
 ## Attendre à la fin de main
 
 En ajoutant une attente de données au clavier, les deux goroutines peuvent s’exécuter. Le programme se termine si l’on appuie sur entrée (validation de Scanln).
+
+## Utiliser des groupes d’attentes (WaitGroup)
+
+Plutôt que le clavier, le programme va gérer lui-même s’il faut attendre ou non avec des groupes d’attente (WaitGroup).  
+Ce sont "simplement" des compteurs. On indique combien de fonction à attendre et quand elles ont fini.
+
+On utilise une fonction anonyme pour ne pas avoir à gérer le compteur dans la fonction,
+ce n’est pas son rôle. La fonction est inline donc elle a accès à la variable **wg**.
+compte n’est plus appelé en tant que goroutine donc wg.Done() (qui décrémente le compteur) n’est appelé qu’à la fin de l’exécution de compte.
+wg.Wait() est bloquant et attend que le compteur soit à zéro.
