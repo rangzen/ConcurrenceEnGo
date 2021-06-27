@@ -8,6 +8,8 @@ import (
 func main() {
 	go compte("mouton")
 	go compte("poisson")
+
+	fmt.Scanln()
 }
 
 func compte(chose string) {

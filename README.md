@@ -19,3 +19,7 @@ C’est en fait la deuxième goroutine du programme puisque main est également 
 
 Les goroutines sont très efficaces pourquoi ne pas tout mettre en goroutines ?  
 Au lancement du programme, vous allez voir... rien. Les goroutines ne sont pas bloquantes, lorsque la goroutine de main va se terminer (puisqu’elle continue d’avancer dans les instructions), le programme va se terminer. Quelque soit l’état des goroutines lancées.
+
+## Attendre à la fin de main
+
+En ajoutant une attente de données au clavier, les deux goroutines peuvent s’exécuter. Le programme se termine si l’on appuie sur entrée (validation de Scanln).
